@@ -124,8 +124,8 @@ module datapath(
 	adder pcadd2(pcplus4D,signimmshD,pcbranchD);
 	mux2 #(32) forwardamux(srcaD,aluoutM,forwardaD,srca2D);
 	mux2 #(32) forwardbmux(srcbD,aluoutM,forwardbD,srcb2D);
-	mux2 #(32) forwardbjrb_lamux(srca2D,readdata1M,jrb_l_astall,srca3D);		//个人认为要根据writereg等于谁来替换谁
-	mux2 #(32) forwardbjrb_lbmux(srcb2D,readdata1M,jrb_l_bstall,srcb3D);		//个人认为要根据writereg等于谁来替换谁
+	mux2 #(32) forwardbjrb_lamux(srca2D,readdata1M,jrb_l_astall,srca3D);
+	mux2 #(32) forwardbjrb_lbmux(srcb2D,readdata1M,jrb_l_bstall,srcb3D);
 	eqcmp comp(srca3D,srcb3D,opD,rtD,equalD);
 
 	assign opD = instrD[31:26];
